@@ -1,10 +1,19 @@
 import React from 'react';
-import {AppRegistry} from 'react-native';
+import {AppRegistry, useColorScheme} from 'react-native';
+import {ThemeProvider} from 'styled-components';
 
 import Routes from './src/routes/Routes';
+import themes from 'styles/themes';
 
 const Jobs = () => {
-  return <Routes />;
+  const deviceTheme = useColorScheme();
+  const theme = themes[deviceTheme] || theme.light;
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
+  );
 };
 
 AppRegistry.registerComponent('jobs', () => Jobs);

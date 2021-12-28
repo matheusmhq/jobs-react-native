@@ -1,11 +1,16 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
+import {SafeArea, ContainerScrollView} from '@general';
+import {} from './ts/styles';
+
 const Helcome: React.FC = ({}) => {
   return (
-    <View>
-      <Text>Welcome</Text>
-    </View>
+    <SafeArea>
+      <ContainerScrollView>
+        <Text>Welcome</Text>
+      </ContainerScrollView>
+    </SafeArea>
   );
 };
 
