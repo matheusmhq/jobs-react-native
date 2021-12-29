@@ -1,17 +1,27 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 
 import orgs from './ts/orgs';
+// @ts-ignore
 import {SafeArea, ContainerScrollView} from '@general';
-import {BtnOrg, TitleOrg} from './ts/styles';
+import {BtnOrg, TitleOrg, ImageOrg, HeaderTitle} from './ts/styles';
 
-const Welcome: React.FC = ({}) => {
+interface Navigation {
+  navigation: any;
+}
+
+const Welcome: React.FC<Navigation> = ({navigation}) => {
+  function goToJobs(item) {
+    navigation.navigate('Jobs', {org: item});
+  }
+
   return (
     <SafeArea>
       <ContainerScrollView>
+        <HeaderTitle>Escolha um repositório para ver as vagas</HeaderTitle>
         {orgs.map((item, index) => {
           return (
-            <BtnOrg key={index}>
+            <BtnOrg key={index} onPress={() => goToJobs(item)}>
+              <ImageOrg source={item.image} resizeMode={'contain'} />
               <TitleOrg>{item.title}</TitleOrg>
             </BtnOrg>
           );

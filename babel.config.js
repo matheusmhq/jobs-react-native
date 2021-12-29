@@ -10,6 +10,8 @@ module.exports = {
           '@api': './src/services/api',
           '@general': './src/styles/general',
           '@constants': './src/functions/constants',
+          '@fontSize': './src/styles/fontSize',
+          '@utils': './src/functions/utils',
         },
       },
     ],
