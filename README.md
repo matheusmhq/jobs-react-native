@@ -1,6 +1,8 @@
-.title {
-    font-size: 20px;
-}
+<style>
+    .title {
+        font-size: 20px;
+    }
+</style>
 
 
 <p align="center" class="title">
