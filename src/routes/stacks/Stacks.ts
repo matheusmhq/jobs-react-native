@@ -1,3 +1,4 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-export default Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
+export default Stack;

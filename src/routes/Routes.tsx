@@ -7,7 +7,7 @@ import Welcome from 'screens/Welcome';
 const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="screen">
+      <Stack.Navigator>
         <Stack.Screen
           options={{
             headerShown: false,
