@@ -1,11 +1,4 @@
-<style>
-    .title {
-        font-size: 20px;
-    }
-</style>
-
-
-<p align="center" class="title">
+<p align="center">
     J.O.B.S
 </p>
 
