@@ -5,7 +5,7 @@ import orgs from './ts/orgs';
 import {SafeArea, ContainerScrollView} from '@general';
 import {BtnOrg, TitleOrg} from './ts/styles';
 
-const Helcome: React.FC = ({}) => {
+const Welcome: React.FC = ({}) => {
   return (
     <SafeArea>
       <ContainerScrollView>
@@ -21,4 +21,4 @@ const Helcome: React.FC = ({}) => {
   );
 };
 
-export default Helcome;
+export default Welcome;
