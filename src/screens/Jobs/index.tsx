@@ -96,17 +96,18 @@ const Jobs: React.FC<Props> = ({route}) => {
   }
 
   if (loading) return <Loading />;
-
-  return (
-    <SafeArea>
-      <FlatList<IJobs>
-        style={{padding: 20}}
-        data={jobs}
-        renderItem={data => renderItem(data.item)}
-        keyExtractor={item => String(item.id)}
-      />
-    </SafeArea>
-  );
+  else {
+    return (
+      <SafeArea>
+        <FlatList<IJobs>
+          style={{padding: 20}}
+          data={jobs}
+          renderItem={data => renderItem(data.item)}
+          keyExtractor={item => String(item.id)}
+        />
+      </SafeArea>
+    );
+  }
 };
 
 export default Jobs;

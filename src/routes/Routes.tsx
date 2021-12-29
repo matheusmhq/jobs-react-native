@@ -6,25 +6,29 @@ import Stack from './stacks/Stacks';
 import Welcome from 'screens/Welcome';
 // @ts-ignore
 import Jobs from 'screens/Jobs';
+// @ts-ignore
+import {ContainerApp} from './ts/styles';
 
 const Routes = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          options={{
-            headerShown: false,
-          }}
-          name="Welcome"
-          component={Welcome}
-        />
-        <Stack.Screen
-          options={({route}) => ({title: route.params.org.title})}
-          name="Jobs"
-          component={Jobs}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ContainerApp>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            options={{
+              headerShown: false,
+            }}
+            name="Welcome"
+            component={Welcome}
+          />
+          <Stack.Screen
+            options={({route}) => ({title: route.params.org.title})}
+            name="Jobs"
+            component={Jobs}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ContainerApp>
   );
 };
 
