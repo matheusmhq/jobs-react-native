@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const BtnOrgs = styled.TouchableOpacity`
+export const BtnOrg = styled.TouchableOpacity`
   background-color: ${props => props.theme.colors.primary};
   margin-top: 20px;
   height: 50px;
@@ -9,4 +9,4 @@ export const BtnOrgs = styled.TouchableOpacity`
   align-items: center;
 `;
 
-export const TitleOrgs = styled.Text``;
+export const TitleOrg = styled.Text``;

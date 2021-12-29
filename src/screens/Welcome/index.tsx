@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 
 import orgs from './ts/orgs';
 import {SafeArea, ContainerScrollView} from '@general';
-import {BtnOrgs, TitleOrgs} from './ts/styles';
+import {BtnOrg, TitleOrg} from './ts/styles';
 
 const Helcome: React.FC = ({}) => {
   return (
@@ -11,9 +11,9 @@ const Helcome: React.FC = ({}) => {
       <ContainerScrollView>
         {orgs.map((item, index) => {
           return (
-            <BtnOrgs key={index}>
-              <TitleOrgs>{item.title}</TitleOrgs>
-            </BtnOrgs>
+            <BtnOrg key={index}>
+              <TitleOrg>{item.title}</TitleOrg>
+            </BtnOrg>
           );
         })}
       </ContainerScrollView>
