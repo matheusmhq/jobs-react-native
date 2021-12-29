@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    O principal intuito na criação desse aplicativo, foi estudar `TYPESCRIPT`, podendo conhecer profundamente os reais benefícios e dificuldades ao usa-lo.
+    O principal intuito na criação desse aplicativo, foi estudar TYPESCRIPT, podendo conhecer profundamente os reais benefícios e dificuldades ao usa-lo.
 </p>
 
 ##
