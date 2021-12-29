@@ -1,6 +1,6 @@
 import React from 'react';
 import {AppRegistry, useColorScheme} from 'react-native';
-import {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components/native';
 
 import Routes from './src/routes/Routes';
 import themes from 'styles/themes';

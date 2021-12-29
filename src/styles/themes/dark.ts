@@ -1,6 +1,10 @@
 export default {
-  background: 'black',
-  color: 'white',
+  title: 'dark',
 
-  primary: '#777777',
+  colors: {
+    background: 'black',
+    color: 'white',
+
+    primary: '#777777',
+  },
 };
