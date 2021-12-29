@@ -1,14 +1,21 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
+import orgs from './ts/orgs';
 import {SafeArea, ContainerScrollView} from '@general';
-import {} from './ts/styles';
+import {BtnOrgs, TitleOrgs} from './ts/styles';
 
 const Helcome: React.FC = ({}) => {
   return (
     <SafeArea>
       <ContainerScrollView>
-        <Text>Welcome</Text>
+        {orgs.map((item, index) => {
+          return (
+            <BtnOrgs key={index}>
+              <TitleOrgs>{item.title}</TitleOrgs>
+            </BtnOrgs>
+          );
+        })}
       </ContainerScrollView>
     </SafeArea>
   );

@@ -3,8 +3,8 @@ export default {
 
   colors: {
     background: 'white',
-    color: 'white',
+    color: 'black',
 
-    primary: 'black',
+    primary: '#ddd',
   },
 };

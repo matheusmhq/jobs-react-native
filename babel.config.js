@@ -9,6 +9,7 @@ module.exports = {
         alias: {
           '@api': './src/services/api',
           '@general': './src/styles/general',
+          '@constants': './src/functions/constants',
         },
       },
     ],
