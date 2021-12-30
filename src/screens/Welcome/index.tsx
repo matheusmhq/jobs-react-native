@@ -5,6 +5,8 @@ import orgs from './ts/orgs';
 import {SafeArea, ContainerScrollView} from '@general';
 import {HeaderTitle, BtnOrg, TitleOrg, ImageOrg} from './ts/styles';
 
+const placeholder = require('assets/images/placeholder.png');
+
 interface Navigation {
   navigation: any;
 }
@@ -21,7 +23,10 @@ const Welcome: React.FC<Navigation> = ({navigation}) => {
         {orgs.map((item, index) => {
           return (
             <BtnOrg key={index} onPress={() => goToJobs(item)}>
-              <ImageOrg source={item.image} resizeMode={'contain'} />
+              <ImageOrg
+                source={item.image || placeholder}
+                resizeMode={'contain'}
+              />
               <TitleOrg>{item.title}</TitleOrg>
             </BtnOrg>
           );
