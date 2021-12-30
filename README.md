@@ -7,7 +7,7 @@
 #
 
 <p align="center">
-    Jobs é um aplicativo para listar issues de vagas de repositórios do github.
+    Jobs é um aplicativo para listar issues de vagas de repositórios no github.
 </p>
 
 <p align="center">
