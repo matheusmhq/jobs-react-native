@@ -2,9 +2,9 @@ export default {
   title: 'light',
 
   colors: {
-    background: 'white',
+    background: '#ddd',
     color: 'black',
 
-    primary: '#ddd',
+    primary: 'white',
   },
 };

@@ -5,7 +5,7 @@ declare module 'styled-components/native' {
     title: string;
 
     colors: {
-      backgroundColor: string;
+      background: string;
       color: string;
       primary: string;
     };

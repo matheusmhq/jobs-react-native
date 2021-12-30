@@ -3,7 +3,7 @@ import React from 'react';
 import orgs from './ts/orgs';
 // @ts-ignore
 import {SafeArea, ContainerScrollView} from '@general';
-import {BtnOrg, TitleOrg, ImageOrg, HeaderTitle} from './ts/styles';
+import {HeaderTitle, BtnOrg, TitleOrg, ImageOrg} from './ts/styles';
 
 interface Navigation {
   navigation: any;

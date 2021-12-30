@@ -5,7 +5,7 @@ import fontSize from '@fontSize';
 
 export const BtnJob = styled.TouchableOpacity`
   background-color: ${props => props.theme.colors.primary};
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   padding: 20px;
   border-radius: 10px;
 `;
@@ -42,4 +42,10 @@ export const Label = styled.Text`
 export const TextInfo = styled.Text`
   font-size: ${fontSize.RFValue(10)}px;
   color: ${props => props.theme.colors.color};
+`;
+
+export const TextQtyComment = styled.Text`
+  font-size: ${fontSize.RFValue(10)}px;
+  color: ${props => props.theme.colors.color};
+  margin-bottom: 4px;
 `;

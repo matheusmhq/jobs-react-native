@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList} from 'react-native';
+import moment from 'moment';
 
 // @ts-ignore
 import {SafeArea} from '@general';
@@ -12,6 +13,7 @@ import {
   ItemLabel,
   Label,
   TextInfo,
+  TextQtyComment,
 } from './ts/styles';
 
 // @ts-ignore
@@ -19,9 +21,8 @@ import api from '@api';
 // @ts-ignore
 import {hexToRgbA} from '@utils';
 
-import moment from 'moment';
-
 interface Props {
+  navigation: any;
   route: any;
 }
 
@@ -31,8 +32,8 @@ interface IJobs {
   assignees: Array<any>;
   author_association: string;
   body: string;
-  closed_at: null;
-  comments: 0;
+  closed_at: string;
+  comments: number;
   comments_url: string;
   created_at: string;
   events_url: string;
@@ -55,7 +56,7 @@ interface IJobs {
   user: any;
 }
 
-const Jobs: React.FC<Props> = ({route}) => {
+const Jobs: React.FC<Props> = ({navigation, route}) => {
   const {repo, org} = route.params.org;
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState<IJobs[]>([]);
@@ -70,9 +71,13 @@ const Jobs: React.FC<Props> = ({route}) => {
       .finally(() => setLoading(false));
   }, []);
 
+  function goToJobDetails(item) {
+    navigation.navigate('JobDetails', {job: item});
+  }
+
   function renderItem(item: IJobs) {
     return (
-      <BtnJob>
+      <BtnJob onPress={() => goToJobDetails(item)}>
         <Title>{item.title}</Title>
 
         <ContainerLabels>
@@ -86,6 +91,12 @@ const Jobs: React.FC<Props> = ({route}) => {
             );
           })}
         </ContainerLabels>
+
+        <TextQtyComment>
+          {item.comments > 0
+            ? `${item.comments} comentário(s)`
+            : 'Nenhum comentário'}
+        </TextQtyComment>
 
         <TextInfo>
           #{item.number} aberto em{' '}
