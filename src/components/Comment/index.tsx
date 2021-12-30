@@ -1,7 +1,6 @@
 import React from 'react';
 import {Linking, Alert} from 'react-native';
 import moment from 'moment';
-import FastImage from 'react-native-fast-image';
 
 import {
   Body,
