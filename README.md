@@ -19,6 +19,10 @@
     <a href="#iniciando">Iniciando</a>
 </p>
 
+<p align="center">
+    <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="J.O.B.S">
+</p>
+
 ## Bibliotecas
 
 As principais bibliotecas usadas nesse projeto:
