@@ -57,7 +57,7 @@ interface IJobs {
 }
 
 const Jobs: React.FC<Props> = ({navigation, route}) => {
-  const perPage = 30;
+  const perPage = 20;
 
   const {repo, org} = route.params.org;
   const [loading, setLoading] = useState(true);
