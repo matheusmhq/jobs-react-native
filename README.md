@@ -1,5 +1,3 @@
-#
-
 <p align="center">
   <a href="#">
         <img src="/src/assets/images/logo.png" alt="J.O.B.S" title="J.O.B.S" />
