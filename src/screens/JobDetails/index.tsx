@@ -65,6 +65,7 @@ const JobDetails: React.FC<Navigation> = ({route}) => {
           {comments.map(item => {
             return (
               <Comment
+                key={item.id}
                 avatar_url={item.user.avatar_url}
                 login={item.user.login}
                 created_at={item.created_at}

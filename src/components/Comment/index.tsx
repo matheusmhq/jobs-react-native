@@ -1,6 +1,7 @@
 import React from 'react';
 import {Linking, Alert} from 'react-native';
 import moment from 'moment';
+import FastImage from 'react-native-fast-image';
 
 import {
   Body,
@@ -53,7 +54,7 @@ const Comment: React.FC<IComment> = ({
     <ContainerComment>
       <ContainerHeader>
         <ContainerAvatar>
-          <Avatar source={{uri: avatar_url}} resizeMode={'contain'} />
+          <Avatar source={{uri: avatar_url}} />
           <ContainerUserInfo>
             <Name>{login}</Name>
             <Date>em {moment(created_at).format('DD/MM/YYYY')}</Date>

@@ -16,7 +16,7 @@ export const BtnOrg = styled.TouchableOpacity`
   border-radius: 12px;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 `;
 
 export const ImageOrg = styled.Image`

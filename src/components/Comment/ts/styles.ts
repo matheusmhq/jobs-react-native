@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import FastImage from 'react-native-fast-image';
 
 // @ts-ignore
 import fontSize from '@fontSize';
@@ -15,7 +16,7 @@ export const ContainerAvatar = styled.View`
   margin-bottom: 20px;
 `;
 
-export const Avatar = styled.Image`
+export const Avatar = styled(FastImage)`
   width: 36px;
   height: 36px;
   border-radius: 100px;
