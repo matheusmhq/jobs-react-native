@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 import moment from 'moment';
 
 // @ts-ignore
@@ -57,19 +57,35 @@ interface IJobs {
 }
 
 const Jobs: React.FC<Props> = ({navigation, route}) => {
+  const perPage = 30;
+
   const {repo, org} = route.params.org;
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState<IJobs[]>([]);
+  const [page, setPage] = useState(1);
+  const [loadingMore, setLoadingMore] = useState(false);
 
   useEffect(() => {
+    getJobs();
+  }, []);
+
+  function getJobs() {
+    if (loadingMore) return false;
+    setLoadingMore(true);
     api
-      .get<IJobs[]>(`/repos/${org}/${repo}/issues`)
+      .get<IJobs[]>(`/repos/${org}/${repo}/issues`, {
+        params: {page, per_page: perPage},
+      })
       .then(response => {
-        setJobs(response.data);
+        setJobs([...jobs, ...response.data]);
+        setPage(page + 1);
       })
       .catch(error => console.log({error}))
-      .finally(() => setLoading(false));
-  }, []);
+      .finally(() => {
+        setLoading(false);
+        setLoadingMore(false);
+      });
+  }
 
   function goToJobDetails(item) {
     navigation.navigate('JobDetails', {job: item});
@@ -115,6 +131,15 @@ const Jobs: React.FC<Props> = ({navigation, route}) => {
           data={jobs}
           renderItem={data => renderItem(data.item)}
           keyExtractor={item => String(item.id)}
+          onEndReachedThreshold={0.1}
+          onEndReached={getJobs}
+          ListFooterComponent={
+            loadingMore ? (
+              <Loading customStyles={{marginBottom: 30}} />
+            ) : (
+              <View style={{height: 60}} />
+            )
+          }
         />
       </SafeArea>
     );
