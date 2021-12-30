@@ -18,7 +18,7 @@ const orgs = [
     image: require('assets/images/backend-brasil.png'),
   },
   {
-    title: 'Datas-Science Brasil',
+    title: 'Data-Science Brasil',
     org: 'datascience-br',
     repo: 'vagas',
     image: require('assets/images/datascience-br.png'),
