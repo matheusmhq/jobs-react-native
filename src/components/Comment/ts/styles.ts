@@ -13,7 +13,7 @@ export const ContainerHeader = styled.View`
 export const ContainerAvatar = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 `;
 
 export const Avatar = styled(FastImage)`
@@ -40,7 +40,6 @@ export const ContainerComment = styled.View`
   background-color: ${props => props.theme.colors.primary};
   padding: 20px;
   border-radius: 10px;
-  margin-top: 4px;
   margin-bottom: 12px;
 `;
 

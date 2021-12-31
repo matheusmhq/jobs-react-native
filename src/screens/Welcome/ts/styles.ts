@@ -12,7 +12,7 @@ export const HeaderTitle = styled.Text`
 
 export const BtnOrg = styled.TouchableOpacity`
   background-color: ${props => props.theme.colors.primary};
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   border-radius: 12px;
   justify-content: center;
   align-items: center;
