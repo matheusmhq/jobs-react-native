@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {AppRegistry, useColorScheme, Image, View} from 'react-native';
+import {
+  AppRegistry,
+  useColorScheme,
+  Image,
+  View,
+  StatusBar,
+} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 
 const jobs_splash = require('assets/images/jobs-splash.png');
@@ -21,6 +27,7 @@ const Jobs = () => {
 
   return (
     <>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
       {showSplash ? (
         <View
           style={{

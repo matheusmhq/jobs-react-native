@@ -6,6 +6,8 @@ import moment from 'moment';
 import {SafeArea} from '@general';
 // @ts-ignore
 import Loading from 'components/Loading';
+// @ts-ignore
+import MsgError from 'components/MsgError';
 import {
   BtnJob,
   Title,
@@ -61,6 +63,7 @@ const Jobs: React.FC<Props> = ({navigation, route}) => {
 
   const {repo, org} = route.params.org;
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [jobs, setJobs] = useState<IJobs[]>([]);
   const [page, setPage] = useState(1);
   const [loadingMore, setLoadingMore] = useState(false);
@@ -72,6 +75,7 @@ const Jobs: React.FC<Props> = ({navigation, route}) => {
   function getJobs() {
     if (loadingMore) return false;
     setLoadingMore(true);
+    setError(false);
     api
       .get<IJobs[]>(`/repos/${org}/${repo}/issues`, {
         params: {page, per_page: perPage},
@@ -80,7 +84,7 @@ const Jobs: React.FC<Props> = ({navigation, route}) => {
         setJobs([...jobs, ...response.data]);
         setPage(page + 1);
       })
-      .catch(error => console.log({error}))
+      .catch(error => setError(true))
       .finally(() => {
         setLoading(false);
         setLoadingMore(false);
@@ -123,27 +127,28 @@ const Jobs: React.FC<Props> = ({navigation, route}) => {
   }
 
   if (loading) return <Loading />;
-  else {
-    return (
-      <SafeArea>
-        <FlatList<IJobs>
-          style={{padding: 20}}
-          data={jobs}
-          renderItem={data => renderItem(data.item)}
-          keyExtractor={item => String(item.id)}
-          onEndReachedThreshold={0.1}
-          onEndReached={getJobs}
-          ListFooterComponent={
-            loadingMore ? (
-              <Loading customStyles={{marginBottom: 30}} />
-            ) : (
-              <View style={{height: 60}} />
-            )
-          }
-        />
-      </SafeArea>
-    );
-  }
+
+  if (error) return <MsgError />;
+
+  return (
+    <SafeArea>
+      <FlatList<IJobs>
+        style={{padding: 20}}
+        data={jobs}
+        renderItem={data => renderItem(data.item)}
+        keyExtractor={item => String(item.id)}
+        onEndReachedThreshold={0.1}
+        onEndReached={getJobs}
+        ListFooterComponent={
+          loadingMore ? (
+            <Loading customStyles={{marginBottom: 30}} />
+          ) : (
+            <View style={{height: 60}} />
+          )
+        }
+      />
+    </SafeArea>
+  );
 };
 
 export default Jobs;
