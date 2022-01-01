@@ -22,6 +22,8 @@ import {
 import api from '@api';
 // @ts-ignore
 import {hexToRgbA} from '@utils';
+// @ts-ignore
+import {perPage} from '@constants';
 
 interface Props {
   navigation: any;
@@ -59,8 +61,6 @@ interface IJobs {
 }
 
 const Jobs: React.FC<Props> = ({navigation, route}) => {
-  const perPage = 20;
-
   const {repo, org} = route.params.org;
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
