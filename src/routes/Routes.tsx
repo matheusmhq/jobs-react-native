@@ -12,9 +12,6 @@ import JobDetails from 'screens/JobDetails';
 import Icon from 'components/Icon';
 // @ts-ignore
 import {onShare} from '@utils';
-// @ts-ignore
-import {msgShare} from '@constants';
-
 import {ContainerApp, BtnShare} from './ts/styles';
 
 const Routes = () => {
@@ -41,7 +38,7 @@ const Routes = () => {
                 <BtnShare
                   onPress={() => {
                     const {title, html_url} = route.params.job;
-                    onShare(`${msgShare} ${title} - ${html_url}`);
+                    onShare(title + '-' + html_url);
                   }}
                   hitSlop={{top: 20, right: 20, bottom: 20, left: 20}}>
                   <Icon name="share" color="black" size={20} />
