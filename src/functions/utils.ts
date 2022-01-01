@@ -6,7 +6,7 @@ export function hexToRgbA(hex: string, opacity: number) {
   return `rgba(${r},${g},${b},${opacity || 0.6})`;
 }
 
-export const onShare = async message => {
+export const onShare = async (message: string) => {
   await Share.share({
     message,
   });
