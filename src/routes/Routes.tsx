@@ -9,7 +9,13 @@ import Jobs from 'screens/Jobs';
 // @ts-ignore
 import JobDetails from 'screens/JobDetails';
 // @ts-ignore
-import {ContainerApp} from './ts/styles';
+import Icon from 'components/Icon';
+// @ts-ignore
+import {onShare} from '@utils';
+// @ts-ignore
+import {msgShare} from '@constants';
+
+import {ContainerApp, BtnShare} from './ts/styles';
 
 const Routes = () => {
   return (
@@ -29,7 +35,19 @@ const Routes = () => {
             component={Jobs}
           />
           <Stack.Screen
-            options={({route}) => ({title: route.params.job.title})}
+            options={({route}) => ({
+              title: route.params.job.title,
+              headerRight: () => (
+                <BtnShare
+                  onPress={() => {
+                    const {title, url} = route.params.job;
+                    onShare(`${msgShare} ${title} - ${url}`);
+                  }}
+                  hitSlop={{top: 20, right: 20, bottom: 20, left: 20}}>
+                  <Icon name="share" color="black" size={20} />
+                </BtnShare>
+              ),
+            })}
             name="JobDetails"
             component={JobDetails}
           />

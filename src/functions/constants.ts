@@ -7,3 +7,4 @@ export const splashDelay = 4000;
 export const perPage = 20;
 export const msgError =
   'Não foi possível carregar as informações, verifique sua conexão.';
+export const msgShare = 'Vi essa vaga e lembrei de você.';

@@ -5,7 +5,7 @@ import orgs from './ts/orgs';
 import {SafeArea, ContainerScrollView} from '@general';
 import {HeaderTitle, BtnOrg, TitleOrg, ImageOrg} from './ts/styles';
 
-const placeholder = require('assets/images/placeholder.png');
+const placeholder = require('assets/images/orgs/placeholder.png');
 
 interface Navigation {
   navigation: any;
