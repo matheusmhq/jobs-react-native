@@ -17,9 +17,14 @@
 ##
 
 <p align="center">
+    <a href="#download">Download</a> •
     <a href="#bibliotecas">Bibliotecas</a> •
     <a href="#iniciando">Iniciando</a>
 </p>
+
+## Download
+
+[Baixe a APK aqui](https://drive.google.com/drive/folders/1th1eVcdR1zwiojqV8A790VGSA89Y853h?usp=sharing)
 
 <p align="center">
     <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="J.O.B.S">
